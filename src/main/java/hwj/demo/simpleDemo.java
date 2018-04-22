@@ -16,6 +16,7 @@ import org.neuroph.util.NeuralNetworkType;
 import org.neuroph.util.NeuronProperties;
 import org.neuroph.util.TransferFunctionType;
 
+//使用感知机记忆逻辑与
 public class simpleDemo extends NeuralNetwork{
 	
 	public simpleDemo(int inputCount){
@@ -61,7 +62,7 @@ public class simpleDemo extends NeuralNetwork{
 		
 		System.out.println(n);
 		
-		//设置每个连接的权重，1和1是输入节点到神经元的权值，-1.5是神经元的偏置
+		//设置每个连接的权重，1和1是输入节点到神经元的权值，-1.5是神经元的偏置(和输入相乘，减去偏置)
 		n.getInputConnections()[0].getWeight().setValue(1);
 		n.getInputConnections()[1].getWeight().setValue(1);
 		n.getInputConnections()[2].getWeight().setValue(-1.5);
