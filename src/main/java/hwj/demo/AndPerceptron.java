@@ -9,6 +9,7 @@ import org.neuroph.core.events.LearningEvent;
 import org.neuroph.core.events.LearningEventListener;
 import org.neuroph.core.learning.IterativeLearning;
 
+//给出学习期望，让感知机学习后 记忆逻辑与
 public class AndPerceptron implements LearningEventListener{
 
 	public static void main(String[] args) {
@@ -27,7 +28,7 @@ public class AndPerceptron implements LearningEventListener{
 	   trainningSet.addRow(new DataSetRow(new double[]{1,1},new double[]{1}));
 	   
 	   //创建一个只有两个输入节点的感知机
-	   simplePerceptron andPerceptron = new simplePerceptron(2);
+	   simplePerceptron andPerceptron = new simplePerceptron(2,1);
 	   
 	   //给学习过程增加事件监听器（监督训练）
 	   perceptronLearningRule learningRule = (perceptronLearningRule) andPerceptron.getLearningRule();

@@ -16,8 +16,8 @@ public class simplePerceptron extends NeuralNetwork{
 	private static final long serialVersionUID = 1L;
 
 
-	public simplePerceptron(int inputNeuralCount){
-		this.creatPerceptron(inputNeuralCount); 
+	public simplePerceptron(int inputNeuralCount,int outputNeuralCount){
+		this.creatPerceptron(inputNeuralCount,outputNeuralCount); 
 	}
 	
 	
@@ -27,7 +27,7 @@ public class simplePerceptron extends NeuralNetwork{
 	 * @serialData 2018.4.22
 	 * @param inputNeuralCount
 	 */
-	public void creatPerceptron(int inputNeuralCount){
+	public void creatPerceptron(int inputNeuralCount, int outputNeuralCount){
 		
 		//设置类型为感知机
 		this.setNetworkType(NeuralNetworkType.PERCEPTRON);
@@ -46,7 +46,7 @@ public class simplePerceptron extends NeuralNetwork{
 		outputNeuronProperties.setProperty("transferFunction", TransferFunctionType.STEP);
 		
 		//建立输出层
-		Layer outputLayer = LayerFactory.createLayer(1, outputNeuronProperties);
+		Layer outputLayer = LayerFactory.createLayer(outputNeuralCount, outputNeuronProperties);
 		this.addLayer(outputLayer);
 		
 		//输入层输出层全连接
